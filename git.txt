@@ -1,0 +1,47 @@
+***Configurando o git************************************************
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL ADDRESS"
+
+***Verificando a configuração****************************************
+more ~/.gitconfig
+
+***Clonando**********************************************************
+git clone https://github.com/<username>/<repositorie>.git
+
+-->o repositorio é clonado para o diretorio corrente no terminal
+-->utilizar o comando cd <repositorie>, para entrar neste
+
+*********************************************************************
+***Repositório Local (Repositorio clonado para dentro do PC) ********
+-->Podemos criar/modificar arquivos/diretórios... e então,
+-->comitar estas ações... Ex.:
+
+1)Preparando o arquivo(novo/modificado) para a próxima revisão do repos.
+git add file.ext
+
+2)Commitando o arquivo.
+git commit -m "comentario ... "
+
+3)Publica todos os commits para o github
+git push
+
+4)Exibindo o status do diretorio git atual
+git status
+
+5)Atualizando projeto no git(diretorio local)
+-->Estando no diretorio local, atualiza a partir do github
+
+git pull
+
+*********************************************************************
+Trabalhando com branches*********************************************
+-->Em um primeiro momento que você cria este branch no github
+-->é necessário realizar o comando git pull no seu projeto para que ...
+...ele possa saber que este branch foi criado
+-->Para selecionarmos o branch master ou o novo branch criado no github
+git pull
+git checkout <branch>
+
+
+
+
