@@ -16,6 +16,12 @@ https://stackoverflow.com/questions/17507477/comparison-dates-with-string-dd-mm-
 
 https://msdn.microsoft.com/pt-br/library/system.datetime.today(v=vs.110).aspx
 
+https://www.lucidchart.com/pages/pt/diagrama-de-classe
+
+http://www.dsc.ufcg.edu.br/~sampaio/cursos/2007.1/Graduacao/SI-II/Uml/diagramas/usecases/usecases.htm
+
+
+
 
 
 
