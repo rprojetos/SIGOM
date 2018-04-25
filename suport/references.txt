@@ -20,6 +20,9 @@ https://www.lucidchart.com/pages/pt/diagrama-de-classe
 
 http://www.dsc.ufcg.edu.br/~sampaio/cursos/2007.1/Graduacao/SI-II/Uml/diagramas/usecases/usecases.htm
 
+astah
+http://acrelinux.org/astah-software-para-modelagem-uml-no-linux/
+
 
 
 
