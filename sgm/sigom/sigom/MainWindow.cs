@@ -111,10 +111,10 @@ public partial class MainWindow : Gtk.Window
             md.Run();
             md.Destroy();
 
-        //sigom.WorkshopWindow w = new sigom.WorkshopWindow();
-        //w.Show();
+        sigom.WorkshopWindow w = new sigom.WorkshopWindow();
+        w.Show();
 
-        //this.Destroy();
+        this.Destroy();
     }
 }
 
