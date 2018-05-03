@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace ProjectHerancaPolimorfismo
 {
     public class Classe3
@@ -16,7 +17,6 @@ namespace ProjectHerancaPolimorfismo
             c2.printMensagem("msg1: " + c2.msg1);
             c2.printMensagem("msg2: " + c2.msg2);
             c2.printMensagem("msg3: " + c2.msg3);
-
         }
     }
 }
