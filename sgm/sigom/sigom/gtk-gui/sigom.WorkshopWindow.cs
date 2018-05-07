@@ -6,26 +6,6 @@ namespace sigom
 	{
 		private global::Gtk.Fixed fixed2;
 
-		private global::Gtk.Entry edtNum1;
-
-		private global::Gtk.Entry edtNum3;
-
-		private global::Gtk.Label label1;
-
-		private global::Gtk.Label label3;
-
-		private global::Gtk.Entry edtNum2;
-
-		private global::Gtk.Entry edtNum4;
-
-		private global::Gtk.Label label2;
-
-		private global::Gtk.Label label4;
-
-		private global::Gtk.Button btnSoma;
-
-		private global::Gtk.Button btnSomaQuatro;
-
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -37,98 +17,6 @@ namespace sigom
 			this.fixed2 = new global::Gtk.Fixed();
 			this.fixed2.Name = "fixed2";
 			this.fixed2.HasWindow = false;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.edtNum1 = new global::Gtk.Entry();
-			this.edtNum1.CanFocus = true;
-			this.edtNum1.Name = "edtNum1";
-			this.edtNum1.IsEditable = true;
-			this.edtNum1.InvisibleChar = '•';
-			this.fixed2.Add(this.edtNum1);
-			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.edtNum1]));
-			w1.X = 11;
-			w1.Y = 31;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.edtNum3 = new global::Gtk.Entry();
-			this.edtNum3.CanFocus = true;
-			this.edtNum3.Name = "edtNum3";
-			this.edtNum3.IsEditable = true;
-			this.edtNum3.InvisibleChar = '•';
-			this.fixed2.Add(this.edtNum3);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.edtNum3]));
-			w2.X = 209;
-			w2.Y = 29;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.label1 = new global::Gtk.Label();
-			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Num-1:");
-			this.fixed2.Add(this.label1);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label1]));
-			w3.X = 14;
-			w3.Y = 5;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.label3 = new global::Gtk.Label();
-			this.label3.Name = "label3";
-			this.label3.LabelProp = global::Mono.Unix.Catalog.GetString("Num-3:");
-			this.fixed2.Add(this.label3);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label3]));
-			w4.X = 210;
-			w4.Y = 6;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.edtNum2 = new global::Gtk.Entry();
-			this.edtNum2.CanFocus = true;
-			this.edtNum2.Name = "edtNum2";
-			this.edtNum2.IsEditable = true;
-			this.edtNum2.InvisibleChar = '•';
-			this.fixed2.Add(this.edtNum2);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.edtNum2]));
-			w5.X = 7;
-			w5.Y = 104;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.edtNum4 = new global::Gtk.Entry();
-			this.edtNum4.CanFocus = true;
-			this.edtNum4.Name = "edtNum4";
-			this.edtNum4.IsEditable = true;
-			this.edtNum4.InvisibleChar = '•';
-			this.fixed2.Add(this.edtNum4);
-			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.edtNum4]));
-			w6.X = 209;
-			w6.Y = 104;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.label2 = new global::Gtk.Label();
-			this.label2.Name = "label2";
-			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Num-2:");
-			this.fixed2.Add(this.label2);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label2]));
-			w7.X = 12;
-			w7.Y = 79;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.label4 = new global::Gtk.Label();
-			this.label4.Name = "label4";
-			this.label4.LabelProp = global::Mono.Unix.Catalog.GetString("Num-4:");
-			this.fixed2.Add(this.label4);
-			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label4]));
-			w8.X = 214;
-			w8.Y = 77;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.btnSoma = new global::Gtk.Button();
-			this.btnSoma.CanFocus = true;
-			this.btnSoma.Name = "btnSoma";
-			this.btnSoma.UseUnderline = true;
-			this.btnSoma.Label = global::Mono.Unix.Catalog.GetString("Soma (1..2)");
-			this.fixed2.Add(this.btnSoma);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.btnSoma]));
-			w9.X = 10;
-			w9.Y = 151;
-			// Container child fixed2.Gtk.Fixed+FixedChild
-			this.btnSomaQuatro = new global::Gtk.Button();
-			this.btnSomaQuatro.CanFocus = true;
-			this.btnSomaQuatro.Name = "btnSomaQuatro";
-			this.btnSomaQuatro.UseUnderline = true;
-			this.btnSomaQuatro.Label = global::Mono.Unix.Catalog.GetString("Soma (1..2..3..4)");
-			this.fixed2.Add(this.btnSomaQuatro);
-			global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.btnSomaQuatro]));
-			w10.X = 147;
-			w10.Y = 153;
 			this.Add(this.fixed2);
 			if ((this.Child != null))
 			{
@@ -137,8 +25,6 @@ namespace sigom
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 300;
 			this.Show();
-			this.btnSoma.Clicked += new global::System.EventHandler(this.OnBtnSomaClicked);
-			this.btnSomaQuatro.Clicked += new global::System.EventHandler(this.OnBtnSomaQuatroClicked);
 		}
 	}
 }

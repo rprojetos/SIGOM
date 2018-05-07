@@ -5,9 +5,17 @@ public partial class MainWindow
 {
 	private global::Gtk.Fixed fixed1;
 
+	private global::Gtk.Label label1;
+
+	private global::Gtk.Entry etrPsw;
+
+	private global::Gtk.Label label2;
+
+	private global::Gtk.Entry etrUser;
+
 	private global::Gtk.Button btnShowMsg;
 
-	private global::Gtk.Label label1;
+	private global::Gtk.Button btnLogin;
 
 	protected virtual void Build()
 	{
@@ -21,23 +29,61 @@ public partial class MainWindow
 		this.fixed1.Name = "fixed1";
 		this.fixed1.HasWindow = false;
 		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.label1 = new global::Gtk.Label();
+		this.label1.Name = "label1";
+		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("Usuário:");
+		this.fixed1.Add(this.label1);
+		global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label1]));
+		w1.X = 56;
+		w1.Y = 74;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.etrPsw = new global::Gtk.Entry();
+		this.etrPsw.CanFocus = true;
+		this.etrPsw.Name = "etrPsw";
+		this.etrPsw.IsEditable = true;
+		this.etrPsw.InvisibleChar = '•';
+		this.fixed1.Add(this.etrPsw);
+		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.etrPsw]));
+		w2.X = 123;
+		w2.Y = 112;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.label2 = new global::Gtk.Label();
+		this.label2.Name = "label2";
+		this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Senha:");
+		this.fixed1.Add(this.label2);
+		global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label2]));
+		w3.X = 67;
+		w3.Y = 117;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.etrUser = new global::Gtk.Entry();
+		this.etrUser.CanFocus = true;
+		this.etrUser.Name = "etrUser";
+		this.etrUser.IsEditable = true;
+		this.etrUser.InvisibleChar = '•';
+		this.fixed1.Add(this.etrUser);
+		global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.etrUser]));
+		w4.X = 122;
+		w4.Y = 65;
+		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.btnShowMsg = new global::Gtk.Button();
 		this.btnShowMsg.CanFocus = true;
 		this.btnShowMsg.Name = "btnShowMsg";
 		this.btnShowMsg.UseUnderline = true;
 		this.btnShowMsg.Label = global::Mono.Unix.Catalog.GetString("ShowMessage");
 		this.fixed1.Add(this.btnShowMsg);
-		global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnShowMsg]));
-		w1.X = 14;
-		w1.Y = 110;
+		global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnShowMsg]));
+		w5.X = 149;
+		w5.Y = 244;
 		// Container child fixed1.Gtk.Fixed+FixedChild
-		this.label1 = new global::Gtk.Label();
-		this.label1.Name = "label1";
-		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("label1");
-		this.fixed1.Add(this.label1);
-		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label1]));
-		w2.X = 19;
-		w2.Y = 162;
+		this.btnLogin = new global::Gtk.Button();
+		this.btnLogin.CanFocus = true;
+		this.btnLogin.Name = "btnLogin";
+		this.btnLogin.UseUnderline = true;
+		this.btnLogin.Label = global::Mono.Unix.Catalog.GetString("Login");
+		this.fixed1.Add(this.btnLogin);
+		global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.btnLogin]));
+		w6.X = 158;
+		w6.Y = 151;
 		this.Add(this.fixed1);
 		if ((this.Child != null))
 		{
@@ -48,5 +94,6 @@ public partial class MainWindow
 		this.Show();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler(this.OnDeleteEvent);
 		this.btnShowMsg.Clicked += new global::System.EventHandler(this.OnBtnShowMsgClicked);
+		this.btnLogin.Clicked += new global::System.EventHandler(this.OnBtnLoginClicked);
 	}
 }

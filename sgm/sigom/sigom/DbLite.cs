@@ -63,6 +63,11 @@ namespace sigom
             }
         }
 
+        //dbPathFile --> path file do banco de dados
+        //tablename --> nome da tabela
+        //resultCol --> coluna da tabela que sera retornada Ex."Nome"
+        //refCol --> coluna de referencia para comparação Ex."Senha"
+        //refData --> dado que sera comparado com a coluna de referencia Ex."123"
         public String dbGetCommand(String dbPathFile, String tableName, String resultCol, String refCol, String refData)
         {
             int i = 0;
@@ -71,9 +76,7 @@ namespace sigom
             ArrayList readArray = new ArrayList();
             try
             {
-                showMessage(dbPathFile);
-                showMessage(tableName);
-                Mono.Data.Sqlite.SqliteConnection connection =
+               Mono.Data.Sqlite.SqliteConnection connection =
                     new Mono.Data.Sqlite.SqliteConnection("Data Source=" + dbPathFile);
                 connection.Open();
                 Mono.Data.Sqlite.SqliteCommand dbcmd = connection.CreateCommand();
@@ -87,13 +90,19 @@ namespace sigom
                 while (rdr.Read())
                 {
                     i++;
-                    if(rdr[refCol].ToString() == refData){
+                    //if(rdr[refCol].ToString() == refData){
+                    //    resultModel = rdr[resultCol].ToString();
+                    //}
+
+                    if (rdr[refCol].ToString() == refData)
+                    {
                         resultModel = rdr[resultCol].ToString();
                     }
                 }
 
+
                 connection.Close();
-                showMessage("SqliteDataReader Executado com sucesso!");
+               
             }
             catch (Exception ex)
             {
@@ -102,5 +111,6 @@ namespace sigom
 
             return resultModel;
         }
+
     }
 }
