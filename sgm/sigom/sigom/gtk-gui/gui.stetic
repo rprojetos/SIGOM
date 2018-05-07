@@ -60,20 +60,6 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="btnShowMsg">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">ShowMessage</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="OnBtnShowMsgClicked" />
-          </widget>
-          <packing>
-            <property name="X">149</property>
-            <property name="Y">244</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.Button" id="btnLogin">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
@@ -85,6 +71,34 @@
           <packing>
             <property name="X">158</property>
             <property name="Y">151</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnShowMsg">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">ShowMessage</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnShowMsgClicked" />
+          </widget>
+          <packing>
+            <property name="X">15</property>
+            <property name="Y">258</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnNewDb">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">New DB</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnNewDbClicked" />
+          </widget>
+          <packing>
+            <property name="X">293</property>
+            <property name="Y">257</property>
           </packing>
         </child>
       </widget>

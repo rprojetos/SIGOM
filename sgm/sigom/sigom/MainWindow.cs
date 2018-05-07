@@ -121,11 +121,12 @@ public partial class MainWindow : Gtk.Window
         //**********************************************************************
 
         //***Path do banco de dados***//
-        String path = System.IO.Directory.GetCurrentDirectory() + "/";
-        String dbName = "sigomDb.db";
-        String dbPathFile = path + dbName;
-        DbLite dbl = new DbLite();
+        //String path = System.IO.Directory.GetCurrentDirectory() + "/";
+        //String dbName = "sigomDb.db";
+        //String dbPathFile = path + dbName;
+        //DbLite dbl = new DbLite();
 
+        //dbl.showMessage(dbPathFile);
         //***Criando o banco de dados***//
         //dbl.dbCreate(dbPathFile);
 
@@ -144,10 +145,10 @@ public partial class MainWindow : Gtk.Window
 
         //int id = 1;
         //string getCommand = "SELECT * FROM Login WHERE ID = " + id;
-        String tableName = "Login";
-        String getData = dbl.dbGetCommand(dbPathFile, tableName, "Nome", "Nome", "admin1");
+        //String tableName = "Login";
+        //String getData = dbl.dbGetCommand(dbPathFile, tableName, "Nome", "Nome", "admin1");
 
-        dbl.showMessage(getData);
+        //dbl.showMessage(getData);
 
 
         //foreach (object values in getData)
@@ -155,13 +156,49 @@ public partial class MainWindow : Gtk.Window
 
         //**********************************************************************
 
+        //sigom.WorkshopWindow ww = new sigom.WorkshopWindow();
+        //ww.Show();
+        //this.Destroy();
+
+        //DbLite dbl = new DbLite();
+        //dbl.inputData();
+        //dbl.showMessage(dbl.inputData());
+
+        // This test that the InputBox can handle more newline than one.
 
 
+        //if (test.ReturnCode == DialogResult.OK)
+        //    MessageBox.Show(test.Text);
 
 
-        sigom.WorkshopWindow ww = new sigom.WorkshopWindow();
-        ww.Show();
-        this.Destroy();
+    }
+
+    protected void OnBtnNewDbClicked(object sender, EventArgs e)
+    {
+        //**********************************************************************
+
+        //***Path do banco de dados***//
+        String path = System.IO.Directory.GetCurrentDirectory() + "/";
+        String dbName = "sigomDb.db";
+        String dbPathFile = path + dbName;
+        DbLite dbl = new DbLite();
+
+        dbl.showMessage(dbPathFile);
+        //***Criando o banco de dados***//
+        //dbl.dbCreate(dbPathFile);
+
+        //***criando a tabela de login***//
+        //string createTable = @"CREATE TABLE Login (ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,Nome VARCHAR(100) NOT NULL,Senha VARCHAR (10) NOT NULL )";
+        //dbl.dbSetCommand(dbPathFile, createTable);
+
+
+        //***Inserir o administrador do login***//
+        //String Nome = "admin";
+        //String Senha = "123456";
+        //String insertCommand = "INSERT INTO Login (Nome, Senha)"+ 
+        //    "VALUES('"+Nome+"','"+Senha+"')";
+        //dbl.dbSetCommand(dbPathFile, insertCommand);
+
     }
 
     protected void OnBtnLoginClicked(object sender, EventArgs e)
@@ -171,39 +208,41 @@ public partial class MainWindow : Gtk.Window
         String dbPathFile = path + dbName;
         DbLite dbl = new DbLite();
 
+        dbl.showMessage(dbPathFile);
+
         String tableName = "Login";
 
         etrUser.Text = etrUser.Text.Trim();
         etrPsw.Text = etrPsw.Text.Trim();
 
-        if ((etrUser.Text != "") && (etrPsw.Text != ""))
-        {
-
-            String getData = dbl.dbGetCommand(dbPathFile, tableName, "Nome", "Nome", etrUser.Text);
-
-            if (etrUser.Text == getData)
+            if ((etrUser.Text != "") && (etrPsw.Text != ""))
             {
-                getData = dbl.dbGetCommand(dbPathFile, tableName, "Senha", "Senha", etrPsw.Text);
-                if (etrPsw.Text == getData)
+
+                String getData = dbl.dbGetCommand(dbPathFile, tableName, "Nome", "Nome", etrUser.Text);
+
+                if (etrUser.Text == getData)
                 {
-                    sigom.WorkshopWindow ww = new sigom.WorkshopWindow();
-                    ww.Show();
-                    this.Destroy();
+                    getData = dbl.dbGetCommand(dbPathFile, tableName, "Senha", "Senha", etrPsw.Text);
+                    if (etrPsw.Text == getData)
+                    {
+                        sigom.WorkshopWindow ww = new sigom.WorkshopWindow();
+                        ww.Show();
+                        this.Destroy();
+                    }
+                    else
+                    {
+                        dbl.showMessage("Usuário e/ou Senha incorreto!");
+                    }
                 }
                 else
                 {
                     dbl.showMessage("Usuário e/ou Senha incorreto!");
                 }
             }
-            else
-            {
-                dbl.showMessage("Usuário e/ou Senha incorreto!");
+            else{
+                dbl.showMessage("Usuário e/ou Senha é obrigatório!"); 
             }
         }
-        else{
-            dbl.showMessage("Usuário e/ou Senha é obrigatório!"); 
-        }
-    }
 }
 
 //ref.Continua ...

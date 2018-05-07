@@ -1,5 +1,6 @@
 ﻿using System;
 using Gtk;
+using Microsoft.VisualBasic;
 using System.Collections;
 using System.Collections.Generic;
 //using Mono.Data.Sqlite;
@@ -18,6 +19,13 @@ namespace sigom
             ButtonsType.Close, msg);
             md.Run();
             md.Destroy();
+        }
+
+        public String inputData(){
+            showMessage("Teste Input");
+            string valor = Interaction.InputBox("Informe o nome", 
+                                                "Procurar por nome", "Macoratti", 100, 200);
+            return valor;
         }
 
         public void dbCreate(String dbPathFile)           
@@ -111,6 +119,47 @@ namespace sigom
 
             return resultModel;
         }
+
+        public void modifyUserPassword(){
+            String path = System.IO.Directory.GetCurrentDirectory() + "/";
+            String dbName = "sigomDb.db";
+            String dbPathFile = path + dbName;
+            //DbLite dbl = new DbLite();
+
+            showMessage(dbPathFile);
+
+            String tableName = "Login";
+
+           
+
+            String getData = dbGetCommand(dbPathFile, tableName, "Nome", "Nome", "admin");
+
+            if (getData == "admin")
+            {
+                getData = dbGetCommand(dbPathFile, tableName, "Senha", "Senha", "123456");
+                if (getData == "123456")
+                {
+                    showMessage("Atenção! Insira seus novos dados de login");
+                    //Update: 
+                    String uNome = "admin00";
+                    String uSenha = "12345678";
+                    int id = 1;
+                    String insertCommand = "UPDATE Login SET "+ 
+                    "Nome = '"+uNome+"', Senha = '"+uSenha+"' WHERE ID = "+ id;
+                    dbSetCommand(dbPathFile, insertCommand);
+                }
+                else
+                {
+                    //showMessage("Usuário e/ou Senha incorreto!");
+                }
+            }
+            else
+            {
+               //showMessage("Usuário e/ou Senha incorreto!");
+            }               
+        }
+
+
 
     }
 }

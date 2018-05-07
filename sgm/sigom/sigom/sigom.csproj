@@ -67,6 +67,9 @@
     </Reference>
     <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="System.Data" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -85,6 +88,8 @@
     <Compile Include="Mensagem.cs" />
     <Compile Include="Calculadora.cs" />
     <Compile Include="SomaQuatro.cs" />
+    <Compile Include="InBox.cs" />
+    <Compile Include="InputBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
