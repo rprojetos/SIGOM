@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+  </configuration>
+  <import>
+    <widget-library name="../bin/Debug/sigom.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Usuário:</property>
+          </widget>
+          <packing>
+            <property name="X">56</property>
+            <property name="Y">74</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="etrPsw">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">123</property>
+            <property name="Y">112</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Senha:</property>
+          </widget>
+          <packing>
+            <property name="X">67</property>
+            <property name="Y">117</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="etrUser">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">122</property>
+            <property name="Y">65</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnLogin">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Login</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnLoginClicked" />
+          </widget>
+          <packing>
+            <property name="X">158</property>
+            <property name="Y">151</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnShowMsg">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">ShowMessage</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnShowMsgClicked" />
+          </widget>
+          <packing>
+            <property name="X">15</property>
+            <property name="Y">258</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnNewDb">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">New DB</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnNewDbClicked" />
+          </widget>
+          <packing>
+            <property name="X">293</property>
+            <property name="Y">257</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="sigom.WorkshopWindow" design-size="1380 758">
+    <action-group name="Default">
+      <action id="UsurioAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Usuário</property>
+        <property name="ShortLabel" translatable="yes">Usuário</property>
+      </action>
+      <action id="CadastarAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cadastar</property>
+        <property name="ShortLabel" translatable="yes">Cadastar</property>
+      </action>
+      <action id="AlterarAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Alterar</property>
+        <property name="ShortLabel" translatable="yes">Alterar</property>
+      </action>
+      <action id="DeletarAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Deletar</property>
+        <property name="ShortLabel" translatable="yes">Deletar</property>
+      </action>
+      <action id="ServiosAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Serviços</property>
+        <property name="ShortLabel" translatable="yes">Serviços</property>
+      </action>
+      <action id="OrdemServioOSAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Ordem Serviço(O.S.)</property>
+        <property name="ShortLabel" translatable="yes">Ordem Serviço(O.S.)</property>
+      </action>
+      <action id="NovaOSAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Nova O.S.</property>
+        <property name="ShortLabel" translatable="yes">Nova O.S.</property>
+      </action>
+      <action id="AlterarOSAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Alterar O.S.</property>
+        <property name="ShortLabel" translatable="yes">Alterar O.S.</property>
+      </action>
+      <action id="BaixarOSAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Baixar O.S.</property>
+        <property name="ShortLabel" translatable="yes">Baixar O.S.</property>
+      </action>
+      <action id="DeletarOSAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Deletar O.S.</property>
+        <property name="ShortLabel" translatable="yes">Deletar O.S.</property>
+      </action>
+      <action id="SolicitaoOramentoAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Solicitação Orçamento</property>
+        <property name="ShortLabel" translatable="yes">Solicitação Orçamento</property>
+      </action>
+      <action id="AtendimentoAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Atendimento</property>
+        <property name="ShortLabel" translatable="yes">Atendimento</property>
+      </action>
+      <action id="ServioAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Serviço</property>
+        <property name="ShortLabel" translatable="yes">Serviço</property>
+      </action>
+      <action id="SolicitaoOramentoAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Solicitação Orçamento</property>
+        <property name="ShortLabel" translatable="yes">Solicitação Orçamento</property>
+      </action>
+      <action id="GerenciamentoAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Gerenciamento</property>
+        <property name="ShortLabel" translatable="yes">Gerenciamento</property>
+      </action>
+      <action id="ClienteAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cliente</property>
+        <property name="ShortLabel" translatable="yes">Cliente</property>
+      </action>
+      <action id="VeiculoAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Veiculo</property>
+        <property name="ShortLabel" translatable="yes">Veiculo</property>
+      </action>
+      <action id="SolicitaoOramentoSOAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Solicitação Orçamento (S.O.)</property>
+        <property name="ShortLabel" translatable="yes">Solicitação Orçamento (S.O.)</property>
+      </action>
+      <action id="CadastrarAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cadastrar</property>
+        <property name="ShortLabel" translatable="yes">Cadastrar</property>
+      </action>
+      <action id="CadastrarAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cadastrar</property>
+        <property name="ShortLabel" translatable="yes">Cadastrar</property>
+      </action>
+      <action id="EmitirSOAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Emitir S.O.</property>
+        <property name="ShortLabel" translatable="yes">Emitir S.O.</property>
+      </action>
+      <action id="PreencherAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Preencher</property>
+        <property name="ShortLabel" translatable="yes">Preencher</property>
+      </action>
+      <action id="OrdemServioAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Ordem Serviço</property>
+        <property name="ShortLabel" translatable="yes">Ordem Serviço</property>
+      </action>
+      <action id="AbertaAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Aberta</property>
+        <property name="ShortLabel" translatable="yes">Aberta</property>
+      </action>
+      <action id="ClienteAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cliente</property>
+        <property name="ShortLabel" translatable="yes">Cliente</property>
+      </action>
+      <action id="VeiculoAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Veiculo</property>
+        <property name="ShortLabel" translatable="yes">Veiculo</property>
+      </action>
+      <action id="ServioAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Serviço</property>
+        <property name="ShortLabel" translatable="yes">Serviço</property>
+      </action>
+      <action id="FuncionrioAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Funcionário</property>
+        <property name="ShortLabel" translatable="yes">Funcionário</property>
+      </action>
+      <action id="BuscarAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Buscar</property>
+        <property name="ShortLabel" translatable="yes">Buscar</property>
+        <signal name="Activated" handler="OnBuscarActionActivated" />
+      </action>
+      <action id="CadastrarAction2">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cadastrar</property>
+        <property name="ShortLabel" translatable="yes">Cadastrar</property>
+      </action>
+      <action id="AlterarAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Alterar</property>
+        <property name="ShortLabel" translatable="yes">Alterar</property>
+      </action>
+      <action id="DeletarAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Deletar</property>
+        <property name="ShortLabel" translatable="yes">Deletar</property>
+      </action>
+      <action id="BuscarAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Buscar</property>
+        <property name="ShortLabel" translatable="yes">Buscar</property>
+      </action>
+      <action id="CadastrarAction3">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cadastrar</property>
+        <property name="ShortLabel" translatable="yes">Cadastrar</property>
+      </action>
+      <action id="AlterarAction2">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Alterar</property>
+        <property name="ShortLabel" translatable="yes">Alterar</property>
+      </action>
+      <action id="DeletarAction2">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Deletar</property>
+        <property name="ShortLabel" translatable="yes">Deletar</property>
+      </action>
+      <action id="BuscarAction2">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Buscar</property>
+        <property name="ShortLabel" translatable="yes">Buscar</property>
+      </action>
+      <action id="CadastrarAction4">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cadastrar</property>
+        <property name="ShortLabel" translatable="yes">Cadastrar</property>
+      </action>
+      <action id="AlterarAction3">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Alterar</property>
+        <property name="ShortLabel" translatable="yes">Alterar</property>
+      </action>
+      <action id="DeletarAction3">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Deletar</property>
+        <property name="ShortLabel" translatable="yes">Deletar</property>
+      </action>
+      <action id="BuscarAction3">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Buscar</property>
+        <property name="ShortLabel" translatable="yes">Buscar</property>
+      </action>
+      <action id="CadastrarAction5">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cadastrar</property>
+        <property name="ShortLabel" translatable="yes">Cadastrar</property>
+      </action>
+      <action id="AlterarAction4">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Alterar</property>
+        <property name="ShortLabel" translatable="yes">Alterar</property>
+      </action>
+      <action id="DeletarAction4">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Deletar</property>
+        <property name="ShortLabel" translatable="yes">Deletar</property>
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">WorkshopWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed2">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar3">
+            <property name="MemberName" />
+            <node name="__gtksharp_93_Stetic_Editor_ActionMenuBar" type="Menubar">
+              <node type="Menu" action="AtendimentoAction">
+                <node type="Menu" action="ClienteAction1">
+                  <node type="Menuitem" action="CadastrarAction" />
+                </node>
+                <node type="Menu" action="VeiculoAction">
+                  <node type="Menuitem" action="CadastrarAction1" />
+                </node>
+                <node type="Menu" action="SolicitaoOramentoSOAction">
+                  <node type="Menuitem" action="EmitirSOAction" />
+                </node>
+              </node>
+              <node type="Menu" action="ServioAction">
+                <node type="Menu" action="SolicitaoOramentoAction1">
+                  <node type="Menuitem" action="PreencherAction" />
+                </node>
+                <node type="Menu" action="OrdemServioAction">
+                  <node type="Menuitem" action="AbertaAction" />
+                </node>
+              </node>
+              <node type="Menu" action="GerenciamentoAction">
+                <node type="Menu" action="ClienteAction">
+                  <node type="Menuitem" action="BuscarAction" />
+                  <node type="Menuitem" action="CadastrarAction2" />
+                  <node type="Menuitem" action="AlterarAction1" />
+                  <node type="Menuitem" action="DeletarAction1" />
+                </node>
+                <node type="Menu" action="VeiculoAction1">
+                  <node type="Menuitem" action="BuscarAction1" />
+                  <node type="Menuitem" action="CadastrarAction3" />
+                  <node type="Menuitem" action="AlterarAction2" />
+                  <node type="Menuitem" action="DeletarAction2" />
+                </node>
+                <node type="Menu" action="ServioAction1">
+                  <node type="Menuitem" action="BuscarAction2" />
+                  <node type="Menuitem" action="CadastrarAction4" />
+                  <node type="Menuitem" action="AlterarAction3" />
+                  <node type="Menuitem" action="DeletarAction3" />
+                </node>
+                <node type="Menu" action="FuncionrioAction">
+                  <node type="Menuitem" action="BuscarAction3" />
+                  <node type="Menuitem" action="CadastrarAction5" />
+                  <node type="Menuitem" action="AlterarAction4" />
+                  <node type="Menuitem" action="DeletarAction4" />
+                </node>
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="X">11</property>
+            <property name="Y">10</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.DrawingArea" id="drawingarea1">
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="X">330</property>
+            <property name="Y">173</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
