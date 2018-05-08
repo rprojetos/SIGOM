@@ -105,6 +105,31 @@
     </child>
   </widget>
   <widget class="Gtk.Window" id="sigom.WorkshopWindow" design-size="400 300">
+    <action-group name="Default">
+      <action id="UsurioAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Usuário</property>
+        <property name="ShortLabel" translatable="yes">Usuário</property>
+      </action>
+      <action id="CadastarAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cadastar</property>
+        <property name="ShortLabel" translatable="yes">Cadastar</property>
+        <signal name="Activated" handler="OnCadastarActionActivated" />
+      </action>
+      <action id="AlterarAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Alterar</property>
+        <property name="ShortLabel" translatable="yes">Alterar</property>
+        <signal name="Activated" handler="OnAlterarActionActivated" />
+      </action>
+      <action id="DeletarAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Deletar</property>
+        <property name="ShortLabel" translatable="yes">Deletar</property>
+        <signal name="Activated" handler="OnDeletarActionActivated" />
+      </action>
+    </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">WorkshopWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -112,6 +137,22 @@
       <widget class="Gtk.Fixed" id="fixed2">
         <property name="MemberName" />
         <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar1">
+            <property name="MemberName" />
+            <node name="__gtksharp_157_Stetic_Editor_ActionMenuBar" type="Menubar">
+              <node type="Menu" action="UsurioAction">
+                <node type="Menuitem" action="CadastarAction" />
+                <node type="Menuitem" action="AlterarAction" />
+                <node type="Menuitem" action="DeletarAction" />
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="X">11</property>
+            <property name="Y">10</property>
+          </packing>
+        </child>
       </widget>
     </child>
   </widget>

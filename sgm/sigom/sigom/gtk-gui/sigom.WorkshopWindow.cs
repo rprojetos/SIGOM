@@ -4,12 +4,40 @@ namespace sigom
 {
 	public partial class WorkshopWindow
 	{
+		private global::Gtk.UIManager UIManager;
+
+		private global::Gtk.Action UsurioAction;
+
+		private global::Gtk.Action CadastarAction;
+
+		private global::Gtk.Action AlterarAction;
+
+		private global::Gtk.Action DeletarAction;
+
 		private global::Gtk.Fixed fixed2;
+
+		private global::Gtk.MenuBar menubar1;
 
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
 			// Widget sigom.WorkshopWindow
+			this.UIManager = new global::Gtk.UIManager();
+			global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup("Default");
+			this.UsurioAction = new global::Gtk.Action("UsurioAction", global::Mono.Unix.Catalog.GetString("Usuário"), null, null);
+			this.UsurioAction.ShortLabel = global::Mono.Unix.Catalog.GetString("Usuário");
+			w1.Add(this.UsurioAction, null);
+			this.CadastarAction = new global::Gtk.Action("CadastarAction", global::Mono.Unix.Catalog.GetString("Cadastar"), null, null);
+			this.CadastarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("Cadastar");
+			w1.Add(this.CadastarAction, null);
+			this.AlterarAction = new global::Gtk.Action("AlterarAction", global::Mono.Unix.Catalog.GetString("Alterar"), null, null);
+			this.AlterarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("Alterar");
+			w1.Add(this.AlterarAction, null);
+			this.DeletarAction = new global::Gtk.Action("DeletarAction", global::Mono.Unix.Catalog.GetString("Deletar"), null, null);
+			this.DeletarAction.ShortLabel = global::Mono.Unix.Catalog.GetString("Deletar");
+			w1.Add(this.DeletarAction, null);
+			this.UIManager.InsertActionGroup(w1, 0);
+			this.AddAccelGroup(this.UIManager.AccelGroup);
 			this.Name = "sigom.WorkshopWindow";
 			this.Title = global::Mono.Unix.Catalog.GetString("WorkshopWindow");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
@@ -17,6 +45,14 @@ namespace sigom
 			this.fixed2 = new global::Gtk.Fixed();
 			this.fixed2.Name = "fixed2";
 			this.fixed2.HasWindow = false;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.UIManager.AddUiFromString(@"<ui><menubar name='menubar1'><menu name='UsurioAction' action='UsurioAction'><menuitem name='CadastarAction' action='CadastarAction'/><menuitem name='AlterarAction' action='AlterarAction'/><menuitem name='DeletarAction' action='DeletarAction'/></menu></menubar></ui>");
+			this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget("/menubar1")));
+			this.menubar1.Name = "menubar1";
+			this.fixed2.Add(this.menubar1);
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.menubar1]));
+			w2.X = 11;
+			w2.Y = 10;
 			this.Add(this.fixed2);
 			if ((this.Child != null))
 			{
@@ -25,6 +61,9 @@ namespace sigom
 			this.DefaultWidth = 400;
 			this.DefaultHeight = 300;
 			this.Show();
+			this.CadastarAction.Activated += new global::System.EventHandler(this.OnCadastarActionActivated);
+			this.AlterarAction.Activated += new global::System.EventHandler(this.OnAlterarActionActivated);
+			this.DeletarAction.Activated += new global::System.EventHandler(this.OnDeletarActionActivated);
 		}
 	}
 }

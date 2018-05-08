@@ -88,8 +88,10 @@
     <Compile Include="Mensagem.cs" />
     <Compile Include="Calculadora.cs" />
     <Compile Include="SomaQuatro.cs" />
-    <Compile Include="InBox.cs" />
-    <Compile Include="InputBox.cs" />
+    <Compile Include="DemoDialog.cs" />
+    <Compile Include="CadastraUsuario.cs" />
+    <Compile Include="AlterarUsuario.cs" />
+    <Compile Include="deletarUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

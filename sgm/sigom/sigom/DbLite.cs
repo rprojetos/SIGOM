@@ -49,8 +49,6 @@ namespace sigom
             {
                 try
                 {
-                    showMessage(dbPathFile);
-                    showMessage(commands);
                     Mono.Data.Sqlite.SqliteConnection connection =
                         new Mono.Data.Sqlite.SqliteConnection("Data Source=" + dbPathFile);
                     connection.Open();
@@ -58,7 +56,6 @@ namespace sigom
                     dbcmd.CommandText = commands;
                     dbcmd.ExecuteNonQuery();
                     connection.Close();
-                    showMessage("SqliteCommand Executado com sucesso!");
                 }
                 catch (Exception ex)
                 {
@@ -120,46 +117,38 @@ namespace sigom
             return resultModel;
         }
 
-        public void modifyUserPassword(){
+        public void modifyUserPassword(String UserName, String newName, String newPwd){
             String path = System.IO.Directory.GetCurrentDirectory() + "/";
             String dbName = "sigomDb.db";
             String dbPathFile = path + dbName;
             //DbLite dbl = new DbLite();
 
-            showMessage(dbPathFile);
+            //showMessage(dbPathFile);
 
             String tableName = "Login";
 
-           
+            String uNome = newName;
+            String uSenha = newPwd;
+            String insertCommand = "UPDATE Login SET "+ 
+                  "Nome = '"+uNome+"', Senha = '"+uSenha+"' WHERE Nome = '"+ UserName + "'";
 
-            String getData = dbGetCommand(dbPathFile, tableName, "Nome", "Nome", "admin");
+            showMessage(insertCommand);
 
-            if (getData == "admin")
-            {
-                getData = dbGetCommand(dbPathFile, tableName, "Senha", "Senha", "123456");
-                if (getData == "123456")
-                {
-                    showMessage("Atenção! Insira seus novos dados de login");
-                    //Update: 
-                    String uNome = "admin00";
-                    String uSenha = "12345678";
-                    int id = 1;
-                    String insertCommand = "UPDATE Login SET "+ 
-                    "Nome = '"+uNome+"', Senha = '"+uSenha+"' WHERE ID = "+ id;
-                    dbSetCommand(dbPathFile, insertCommand);
-                }
-                else
-                {
-                    //showMessage("Usuário e/ou Senha incorreto!");
-                }
-            }
-            else
-            {
-               //showMessage("Usuário e/ou Senha incorreto!");
-            }               
+            dbSetCommand(dbPathFile, insertCommand);
+                            
         }
 
+        public void deleteUser(String userName)
+        {
+            String path = System.IO.Directory.GetCurrentDirectory() + "/";
+            String dbName = "sigomDb.db";
+            String dbPathFile = path + dbName;
 
+            String insertCommand = "DELETE FROM Login WHERE Nome = '" + userName + "'";
+
+            dbSetCommand(dbPathFile, insertCommand);
+
+        }
 
     }
 }

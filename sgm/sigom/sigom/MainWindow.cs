@@ -171,6 +171,10 @@ public partial class MainWindow : Gtk.Window
         //    MessageBox.Show(test.Text);
 
 
+        //sigom.AlterarUsuario cadUser = new AlterarUsuario();
+
+        sigom.deletarUsuario deletUser = new deletarUsuario();
+
     }
 
     protected void OnBtnNewDbClicked(object sender, EventArgs e)
