@@ -38,6 +38,7 @@ namespace sigom
 			w1.Add(this.DeletarAction, null);
 			this.UIManager.InsertActionGroup(w1, 0);
 			this.AddAccelGroup(this.UIManager.AccelGroup);
+			this.Sensitive = false;
 			this.Name = "sigom.WorkshopWindow";
 			this.Title = global::Mono.Unix.Catalog.GetString("WorkshopWindow");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
@@ -58,7 +59,7 @@ namespace sigom
 			{
 				this.Child.ShowAll();
 			}
-			this.DefaultWidth = 400;
+			this.DefaultWidth = 420;
 			this.DefaultHeight = 300;
 			this.Show();
 			this.CadastarAction.Activated += new global::System.EventHandler(this.OnCadastarActionActivated);

@@ -104,7 +104,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="sigom.WorkshopWindow" design-size="400 300">
+  <widget class="Gtk.Window" id="sigom.WorkshopWindow" design-size="420 300">
     <action-group name="Default">
       <action id="UsurioAction">
         <property name="Type">Action</property>
@@ -131,6 +131,7 @@
       </action>
     </action-group>
     <property name="MemberName" />
+    <property name="Sensitive">False</property>
     <property name="Title" translatable="yes">WorkshopWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <child>
