@@ -1,6 +1,7 @@
 ﻿using System;
 using Gtk;
 using System.Collections;
+using System.Collections.Generic;
 using sigom;
 
 public partial class MainWindow : Gtk.Window
@@ -135,6 +136,8 @@ public partial class MainWindow : Gtk.Window
         //dbl.dbSetCommand(dbPathFile, createTable);
 
 
+
+
         //***Inserir o administrador do login***//
         //String Nome = "admin";
         //String Senha = "123456";
@@ -209,6 +212,7 @@ public partial class MainWindow : Gtk.Window
 
     }
 
+    /*
     protected void OnBtnLoginClicked(object sender, EventArgs e)
     {
         String path = System.IO.Directory.GetCurrentDirectory() + "/";
@@ -251,6 +255,116 @@ public partial class MainWindow : Gtk.Window
                 dbl.showMessage("Usuário e/ou Senha é obrigatório!"); 
             }
         }
+*/
+    protected void OnButton1Clicked(object sender, EventArgs e)
+    {
+        //***Path do banco de dados***//
+        String path = System.IO.Directory.GetCurrentDirectory() + "/";
+        String dbName = "sigomDb.db";
+        String dbPathFile = path + dbName;
+        DbLite dbl = new DbLite();
+
+        //dbl.showMessage(dbPathFile);
+        //***Criando o banco de dados***//
+        //dbl.dbCreate(dbPathFile);
+
+        //***criando a tabela de login***//
+        //string createTable = @"CREATE TABLE Login (ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,Nome VARCHAR(100) NOT NULL,Senha VARCHAR (10) NOT NULL )";
+
+        //createTable = @"CREATE TABLE OrdemServico(
+        //numOs INTEGER PRIMARY KEY,
+        //matricFunc INTEGER,
+        //codCli INTEGER,
+        //codCarro INTEGER,
+        //codServ VARCHAR(2),
+        //descricao VARCHAR(100),
+        //Status VARCHAR(20)
+        //)";
+
+        //dbl.dbSetCommand(dbPathFile, createTable);
+
+
+        //***Inserir o conteudo na tabela***//
+        String numOs = "6";//int
+        String matricFunc = "103";//int
+        String codCli = "100036";//int
+        String codCarro = "234187";//int
+        String codServ = "4E";//1M 2S 3F 4E 5I
+        String descricao = "SUBSTITUIÇÃO DAS LAMPADAS DE FREIO";
+        String status = "ABERTO";//ABERTO NEGOCIANDO EXECUTANDO  FECHADO
+        String insertCommand = "INSERT INTO OrdemServico (numOs, matricFunc, codCli, " +
+            "codCarro, codServ, descricao, status)"+ 
+            "VALUES("+numOs+","+matricFunc+","+codCli+","+codCarro+",'"+codServ+"','"+descricao+"','" + status + "')";
+        dbl.dbSetCommand(dbPathFile, insertCommand);
+
+        //***Inserir o conteudo na tabela***//
+         numOs = "7";//int
+         matricFunc = "101";//int
+         codCli = "100219";//int
+         codCarro = "128475";//int
+         codServ = "1M";//1M 2S 3F 4E 5I
+         descricao = "TROCA DE ÓLEO DO MOTOR";
+         status = "ABERTO";//ABERTO NEGOCIANDO EXECUTANDO  FECHADO
+         insertCommand = "INSERT INTO OrdemServico (numOs, matricFunc, codCli, " +
+            "codCarro, codServ, descricao, status)" +
+            "VALUES(" + numOs + "," + matricFunc + "," + codCli + "," + codCarro + ",'" + codServ + "','" + descricao + "','" + status + "')";
+        dbl.dbSetCommand(dbPathFile, insertCommand);
+
+        //***Inserir o conteudo na tabela***//
+        numOs = "8";//int
+        matricFunc = "103";//int
+        codCli = "100481";//int
+        codCarro = "234472";//int
+        codServ = "3F";//1M 2S 3F 4E 5I
+        descricao = "SUBSTITUIÇÃO DO CILINDRO MESTRE DO FREIO";
+        status = "ABERTO";//ABERTO NEGOCIANDO EXECUTANDO  FECHADO
+        insertCommand = "INSERT INTO OrdemServico (numOs, matricFunc, codCli, " +
+           "codCarro, codServ, descricao, status)" +
+           "VALUES(" + numOs + "," + matricFunc + "," + codCli + "," + codCarro + ",'" + codServ + "','" + descricao + "','" + status + "')";
+        dbl.dbSetCommand(dbPathFile, insertCommand);
+
+        //***Inserir o conteudo na tabela***//
+        numOs = "9";//int
+        matricFunc = "102";//int
+        codCli = "100518";//int
+        codCarro = "384815";//int
+        codServ = "5I";//1M 2S 3F 4E 5I
+        descricao = "SUBSTITUIÇÃO DA BOBINA DE IGNIÇÃO ELETRÔNICA";
+        status = "ABERTO";//ABERTO NEGOCIANDO EXECUTANDO  FECHADO
+        insertCommand = "INSERT INTO OrdemServico (numOs, matricFunc, codCli, " +
+           "codCarro, codServ, descricao, status)" +
+           "VALUES(" + numOs + "," + matricFunc + "," + codCli + "," + codCarro + ",'" + codServ + "','" + descricao + "','" + status + "')";
+        dbl.dbSetCommand(dbPathFile, insertCommand);
+
+        //***Inserir o conteudo na tabela***//
+        numOs = "10";//int
+        matricFunc = "101";//int
+        codCli = "100918";//int
+        codCarro = "718614";//int
+        codServ = "2S";//1M 2S 3F 4E 5I
+        descricao = "SUBASTITUIÇÃO DOS AMORTECEDORES TRASEIROS E DIANTEIROS";
+        status = "ABERTO";//ABERTO NEGOCIANDO EXECUTANDO  FECHADO
+        insertCommand = "INSERT INTO OrdemServico (numOs, matricFunc, codCli, " +
+           "codCarro, codServ, descricao, status)" +
+           "VALUES(" + numOs + "," + matricFunc + "," + codCli + "," + codCarro + ",'" + codServ + "','" + descricao + "','" + status + "')";
+        dbl.dbSetCommand(dbPathFile, insertCommand);
+
+
+    }
+
+    protected void OnBtnOsAbertasClicked(object sender, EventArgs e)
+    {
+        String path = System.IO.Directory.GetCurrentDirectory() + "/";
+        String dbName = "sigomDb.db";
+        String dbPathFile = path + dbName;
+        DbLite dbl = new DbLite();
+        List<String> getData = new List<String>();
+
+        String tableName = "OrdemServico";
+        getData = dbl.dbGetCommand(dbPathFile, tableName, "numOs", "Status", "ABERTO");
+
+        sigom.fifoService fs = new fifoService(getData);
+    }
 }
 
 //ref.Continua ...

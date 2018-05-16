@@ -6,7 +6,7 @@
   <import>
     <widget-library name="../bin/Debug/sigom.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+  <widget class="Gtk.Window" id="MainWindow" design-size="637 493">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -15,64 +15,6 @@
       <widget class="Gtk.Fixed" id="fixed1">
         <property name="MemberName" />
         <property name="HasWindow">False</property>
-        <child>
-          <widget class="Gtk.Label" id="label1">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Usuário:</property>
-          </widget>
-          <packing>
-            <property name="X">56</property>
-            <property name="Y">74</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="etrPsw">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">•</property>
-          </widget>
-          <packing>
-            <property name="X">123</property>
-            <property name="Y">112</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label2">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">Senha:</property>
-          </widget>
-          <packing>
-            <property name="X">67</property>
-            <property name="Y">117</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="etrUser">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">•</property>
-          </widget>
-          <packing>
-            <property name="X">122</property>
-            <property name="Y">65</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="btnLogin">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Login</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="OnBtnLoginClicked" />
-          </widget>
-          <packing>
-            <property name="X">158</property>
-            <property name="Y">151</property>
-          </packing>
-        </child>
         <child>
           <widget class="Gtk.Button" id="btnShowMsg">
             <property name="MemberName" />
@@ -83,8 +25,21 @@
             <signal name="Clicked" handler="OnBtnShowMsgClicked" />
           </widget>
           <packing>
-            <property name="X">15</property>
-            <property name="Y">258</property>
+            <property name="X">10</property>
+            <property name="Y">443</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnLogin">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Login</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">153</property>
+            <property name="Y">436</property>
           </packing>
         </child>
         <child>
@@ -97,8 +52,80 @@
             <signal name="Clicked" handler="OnBtnNewDbClicked" />
           </widget>
           <packing>
-            <property name="X">293</property>
-            <property name="Y">257</property>
+            <property name="X">263</property>
+            <property name="Y">434</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="etrPsw">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">202</property>
+            <property name="Y">401</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="etrUser">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">•</property>
+          </widget>
+          <packing>
+            <property name="X">203</property>
+            <property name="Y">363</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Senha:</property>
+          </widget>
+          <packing>
+            <property name="X">19</property>
+            <property name="Y">411</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Usuário:</property>
+          </widget>
+          <packing>
+            <property name="X">17</property>
+            <property name="Y">387</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">GtkButton</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnButton1Clicked" />
+          </widget>
+          <packing>
+            <property name="X">485</property>
+            <property name="Y">441</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="btnOsAbertas">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">O.S. Abertas</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnBtnOsAbertasClicked" />
+          </widget>
+          <packing>
+            <property name="X">2</property>
+            <property name="Y">5</property>
           </packing>
         </child>
       </widget>
@@ -338,7 +365,7 @@
         <child>
           <widget class="Gtk.MenuBar" id="menubar3">
             <property name="MemberName" />
-            <node name="__gtksharp_93_Stetic_Editor_ActionMenuBar" type="Menubar">
+            <node name="menubar3" type="Menubar">
               <node type="Menu" action="AtendimentoAction">
                 <node type="Menu" action="ClienteAction1">
                   <node type="Menuitem" action="CadastrarAction" />

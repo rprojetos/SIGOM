@@ -73,10 +73,10 @@ namespace sigom
         //resultCol --> coluna da tabela que sera retornada Ex."Nome"
         //refCol --> coluna de referencia para comparação Ex."Senha"
         //refData --> dado que sera comparado com a coluna de referencia Ex."123"
-        public String dbGetCommand(String dbPathFile, String tableName, String resultCol, String refCol, String refData)
+        public List<String> dbGetCommand(String dbPathFile, String tableName, String resultCol, String refCol, String refData)
         {
             int i = 0;
-            String resultModel = "";
+            List<String> resultModel = new List<String>();
             String strQuery = "SELECT * FROM " + tableName;
             ArrayList readArray = new ArrayList();
             try
@@ -87,21 +87,14 @@ namespace sigom
                 Mono.Data.Sqlite.SqliteCommand dbcmd = connection.CreateCommand();
 
                 dbcmd.CommandText = strQuery;
-
-                //SqliteDataReader rdr = cmd.ExecuteReader()
                 Mono.Data.Sqlite.SqliteDataReader rdr = dbcmd.ExecuteReader();
-
 
                 while (rdr.Read())
                 {
                     i++;
-                    //if(rdr[refCol].ToString() == refData){
-                    //    resultModel = rdr[resultCol].ToString();
-                    //}
-
                     if (rdr[refCol].ToString() == refData)
                     {
-                        resultModel = rdr[resultCol].ToString();
+                        resultModel.Add(rdr[resultCol].ToString());//[i] = rdr[resultCol].ToString();
                     }
                 }
 

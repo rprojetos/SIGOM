@@ -89,10 +89,8 @@
     <Compile Include="Calculadora.cs" />
     <Compile Include="SomaQuatro.cs" />
     <Compile Include="DemoDialog.cs" />
-    <Compile Include="CadastraUsuario.cs" />
-    <Compile Include="AlterarUsuario.cs" />
-    <Compile Include="deletarUsuario.cs" />
     <Compile Include="DataSys.cs" />
+    <Compile Include="fifoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
